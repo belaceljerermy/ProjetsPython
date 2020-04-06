@@ -1,0 +1,11 @@
+from PIL import Image
+from PIL.ExifTags import TAGS
+
+image = Image.open("/root/Bureau/2.jpg")
+ret = ""
+infos = image._getexif()
+
+for tag, value in infos.items():
+    decoded = TAGS.get(tag, tag)
+    ret.decoded = value
+print ret
